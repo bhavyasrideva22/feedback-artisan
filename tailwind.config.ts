@@ -47,6 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        assessment: {
+          primary: "hsl(var(--assessment-primary))",
+          secondary: "hsl(var(--assessment-secondary))",
+          gradient: "var(--assessment-gradient)",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -80,10 +85,40 @@ export default {
             height: "0",
           },
         },
+        fadeIn: {
+          from: { opacity: "0", transform: "translateY(10px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        slideUp: {
+          from: { transform: "translateY(20px)", opacity: "0" },
+          to: { transform: "translateY(0)", opacity: "1" },
+        },
+        bounceGentle: {
+          "0%, 20%, 50%, 80%, 100%": {
+            transform: "translateY(0)",
+          },
+          "40%": {
+            transform: "translateY(-4px)",
+          },
+          "60%": {
+            transform: "translateY(-2px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fadeIn 0.5s ease-out",
+        "slide-up": "slideUp 0.3s ease-out",
+        "bounce-gentle": "bounceGentle 0.6s ease-out",
+      },
+      boxShadow: {
+        "assessment-card": "var(--assessment-card-hover)",
+        "soft": "0 2px 8px -2px hsl(0 0% 0% / 0.1)",
+      },
+      transitionTimingFunction: {
+        smooth: "var(--transition-smooth)",
+      },
       },
     },
   },
